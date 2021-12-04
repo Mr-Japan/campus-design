@@ -100,3 +100,19 @@ h1, h2 {
     margin-right: -15px;
 }
 
+.btn-black {
+  color: #fff;
+  border : 1px solid #fff;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  font-size: 20px;
+  background-color: rgba(0,255,0,0.0);
+  
+  &:hover {
+    color: #fff;
+  }
+}
+
+.topic-new-wrapper {
+  padding-top: 120px;
+}
