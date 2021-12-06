@@ -1,0 +1,2 @@
+class ClassworkListController < ApplicationController
+end

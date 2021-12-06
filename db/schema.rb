@@ -10,7 +10,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_12_03_110444) do
+ActiveRecord::Schema.define(version: 2021_12_06_102358) do
+
+  create_table "classworks", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "classname"
+    t.string "w_day"
+    t.string "period"
+    t.string "professor"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "classwork_id"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["classwork_id"], name: "index_comments_on_classwork_id"
+    t.index ["user_id"], name: "index_comments_on_user_id"
+  end
 
   create_table "topics", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "user_id"
@@ -28,4 +46,6 @@ ActiveRecord::Schema.define(version: 2021_12_03_110444) do
     t.string "password_digest"
   end
 
+  add_foreign_key "comments", "classworks"
+  add_foreign_key "comments", "users"
 end

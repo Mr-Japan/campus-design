@@ -32,6 +32,12 @@
                   <%= image_tag "camera.png" %>
                 <% end %>
               </li>
+              <li>
+                <%= link_to logout_path, method: :delete do %>
+                <%= image_tag "logout.png" %>
+                <% end %>
+              </li>
+
            
            <% else %>
               <li>

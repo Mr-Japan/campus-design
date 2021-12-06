@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  classname: MyString
+  w_day: MyString
+  period: MyString
+  professor: MyString
+
+two:
+  classname: MyString
+  w_day: MyString
+  period: MyString
+  professor: MyString
