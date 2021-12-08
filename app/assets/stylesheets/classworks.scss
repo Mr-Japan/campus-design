@@ -1,0 +1,30 @@
+.search-area {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 3;
+  background-color:rgba(255,255,255,0.8);
+  padding: 20px;
+}
+
+.search-btn {
+  width: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.table, td, th {
+  border: 0.5px #008000 solid; 
+}
+
+.table {
+   text-align: center;
+}
+
+.search-btn {
+  background-color: green;
+  background: #008000;
+  margin: 20px;
+}
+

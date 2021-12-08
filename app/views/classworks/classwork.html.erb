@@ -1,0 +1,39 @@
+<div class="top-hero-wrapper text-center">
+   <div class="conteiner top-hero-container">
+    <h1 class="text-white">Hello guys!</h1>
+    <h2 class="text-white">気になる講義を探してみよう</h2>
+    <div class="container">
+      
+      <div class="search-bar">aaaa</div>
+      
+      <div class="search-area">
+        <%= form_with url: root_path, method: "GET"  do |f| %>
+        <table>
+          <tr>
+            <th>講義名</th>
+            <td><%= f.text_field :class_name %></td>
+          </tr>
+          <tr>
+            <th>教員名</th>
+            <td><%= f.text_field :professor_name %></td>
+          </tr>
+          <tr>
+            <th>曜日</th>
+            <td><%= f.select :w_day, ["月", "火", "水", "木", "金", "土"] %></td>
+          </tr>
+          <tr>
+            <th>時限</th>
+            <td><%= f.select :period, ["1", "2", "3", "4", "5", "6"] %></td>
+          </tr>
+        </table>
+        
+        
+        <div class="search-btn">
+          <%= f.submit 'Search', class: 'btn btn-block btn-white' %>
+        </div>
+        <% end %>
+        
+        </div>
+    </div>
+  </div>
+</div> 

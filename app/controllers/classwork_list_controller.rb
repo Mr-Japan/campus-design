@@ -1,2 +1,0 @@
-class ClassworkListController < ApplicationController
-end

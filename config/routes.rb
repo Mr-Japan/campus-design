@@ -12,6 +12,8 @@ Rails.application.routes.draw do
   post   '/login',   to: 'sessions#create'
   delete '/logout',  to: 'sessions#destroy'
   
+  get '/classwork', to: 'classworks#classwork'
+  
   resources :users
   resources :topics
 end
