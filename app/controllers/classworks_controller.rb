@@ -1,4 +1,15 @@
 class ClassworksController < ApplicationController
-    def classwork
+    
+    def home
+         render "classworks/home"
     end
+    
+    def index
+        render "classworks/index"
+    end
+    
+    def show
+        render "classworks/show"
+    end
+    
 end
