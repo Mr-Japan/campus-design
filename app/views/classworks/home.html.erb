@@ -7,7 +7,7 @@
       <div class="search-bar">aaaa</div>
       
       <div class="search-area">
-        <%= form_with url: root_path, method: "GET"  do |f| %>
+        <%= form_with url: classworks_search_path, method: "POST"  do |f| %>
         <table>
           <tr>
             <th>講義名</th>
@@ -19,11 +19,11 @@
           </tr>
           <tr>
             <th>曜日</th>
-            <td><%= f.select :w_day, ["月", "火", "水", "木", "金", "土"] %></td>
+            <td><%= f.select :w_day, ["月", "火", "水", "木", "金", "土"], {include_blank: "曜日を選択しない"} %></td>
           </tr>
           <tr>
             <th>時限</th>
-            <td><%= f.select :period, ["1", "2", "3", "4", "5", "6"] %></td>
+            <td><%= f.select :period, ["1", "2", "3", "4", "5", "6"], {include_blank: "時限を選択しない"} %></td>
           </tr>
         </table>
         
