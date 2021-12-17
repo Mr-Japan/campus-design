@@ -1,15 +1,23 @@
 <div class="top-hero-wrapper text-center">
    <div class="conteiner top-hero-container">
       <h1 class="text-white">Hello guys!</h1>
-      <h2 class="text-white">aaaaaaaaaaaaaaaaaaa</h2>
+      <h2 class="text-white">検索結果一覧</h2>
       <div class="container">
+         <% @classwork.each do |classwork| %>
+            <!--<a href="" class="btn btn--orange">PUSH</a>-->
+            
+            <div class="btn btn--orange">
+               <%= link_to("/classworks/#{classwork.id}", class: "text-white") do %>
+                  <%= classwork.class_name %>
+                  <%= classwork.professor_name %>
+                  <%= classwork.w_day %>
+                  <%= classwork.period %>
+               <% end %>
+            </div>
+               
          
-      
-      <!--<%= link_to '#', 'classwork_path',class: 'text-white' %>-->
-       
-        
-        
-        
+         <% end %>
+         
       </div>
    </div>
 </div>

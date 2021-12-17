@@ -15,7 +15,7 @@ Rails.application.routes.draw do
   
   get '/classworks',  to: 'classworks#home'
   get  '/classworks/index', to: 'classworks#index'
-  post '/classworks/search', to: 'classworks#search'
+  get '/classworks/search', to: 'classworks#search'
   get  '/classworks/:id', to: 'classworks#show'
   
   resources :users

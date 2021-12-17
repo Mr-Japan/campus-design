@@ -22,6 +22,7 @@ h1, h2 {
 .top-hero-wrapper {
   width: 100vw;
   height: 100vh;
+  overflow: scroll;
   background-image: image-url('AGU-schoolpic-6.jpg');
   background-position: center;
   background-repeat: no-repeat;
@@ -153,6 +154,7 @@ h1, h2 {
   }
 }
 
-
-
+.text-white-important {
+  color: white !important;
+}
 

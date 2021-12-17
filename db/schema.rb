@@ -13,12 +13,14 @@
 ActiveRecord::Schema.define(version: 2021_12_07_085639) do
 
   create_table "classworks", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "classname"
+    t.string "class_name"
     t.string "w_day"
     t.string "period"
-    t.string "professor"
+    t.string "professor_name"
+    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_classworks_on_user_id"
   end
 
   create_table "comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -54,6 +56,7 @@ ActiveRecord::Schema.define(version: 2021_12_07_085639) do
     t.string "password_digest"
   end
 
+  add_foreign_key "classworks", "users"
   add_foreign_key "comments", "classworks"
   add_foreign_key "comments", "users"
 end

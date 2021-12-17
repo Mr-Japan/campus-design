@@ -7,7 +7,7 @@
       <div class="search-bar">aaaa</div>
       
       <div class="search-area">
-        <%= form_with url: classworks_search_path, method: "POST"  do |f| %>
+        <%= form_with url: classworks_search_path, method: "GET", local: true  do |f| %>
         <table>
           <tr>
             <th>講義名</th>
