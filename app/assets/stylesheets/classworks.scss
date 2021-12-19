@@ -56,3 +56,16 @@
 .individual {
   font-size: 50px;
 }
+
+.text-introduction {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  margin-left: 100px;
+  margin-right: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 3;
+  background-color:rgba(82, 204, 82, 0.8);
+  padding: 20px;
+}

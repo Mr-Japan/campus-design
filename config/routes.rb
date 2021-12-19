@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
+  #resources :topics
   #get 'topics/new', to: "topics#new"
-  post "topics", to: "topics#create"
+  #post "topics", to: "topics#create"
+  
   get 'session/new'
- # get 'users/new'
+  # get 'users/new'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root 'pages#index'
   get 'pages/index'
@@ -19,6 +21,5 @@ Rails.application.routes.draw do
   get  '/classworks/:id', to: 'classworks#show'
   
   resources :users
-  resources :topics
   #resources :classworks
 end

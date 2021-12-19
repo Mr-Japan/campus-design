@@ -38,6 +38,9 @@ class ClassworksController < ApplicationController
     
     def show
         @classwork = Classwork.find_by(id: params[:id])
+        if @classwork.nil?
+            abort 404
+        end
         #sbinding.pry
         
         render "classworks/show"

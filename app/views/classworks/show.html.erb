@@ -9,10 +9,18 @@
          <%= @classwork.period %>
       </div>
       <h2 class="text-white">講義紹介</h1>
-      <div class="col-md-3">
-            
+         <div class="text-introduction text-white">
+            <%= @classwork.introduction %>
+         </div>
+      <div class="flex-center">
+         <div class="col-md-3">
+             <%= link_to '投稿された情報を見る', new_user_path, class: 'btn btn-block btn-white flex-center' %>
+         </div>
+         <div class="col-md-3">
+             <%= link_to 'コメントを投稿する', login_path, class: 'btn btn-block btn-white flex-center' %>
+         </div> 
       </div>
-      
+
       
       
       
