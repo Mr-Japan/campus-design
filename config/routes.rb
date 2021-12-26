@@ -23,6 +23,7 @@ Rails.application.routes.draw do
   
   get '/classworks/:id/comments/new', to: 'comments#new', as:'comments_new'
   get '/classworks/:id/comments',     to: 'comments#index', as:'comments_index'
+  post '/classworks/:id/comments',    to: 'comments#create', as:'comments_create'
   
   
   #resources :classworks

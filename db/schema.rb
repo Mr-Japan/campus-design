@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(version: 2021_12_19_065620) do
   end
 
   create_table "comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "content"
     t.bigint "classwork_id"
     t.bigint "user_id"
     t.datetime "created_at", null: false
@@ -35,6 +36,7 @@ ActiveRecord::Schema.define(version: 2021_12_19_065620) do
 
   create_table "pictures", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "user_id"
+    t.integer "classwork_id"
     t.string "description"
     t.string "image"
     t.datetime "created_at", null: false

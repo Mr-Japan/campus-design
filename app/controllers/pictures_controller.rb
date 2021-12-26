@@ -1,7 +1,7 @@
 class PicturesController < ApplicationControldef
   def new
   end
-  def create
+  def index
   end
   
 end
