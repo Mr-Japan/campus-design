@@ -10,16 +10,20 @@ Rails.application.routes.draw do
   get 'pages/index'
 
   resources :users
+  resources :sessions
   
   get    '/login',   to: 'sessions#new'
   post   '/login',   to: 'sessions#create'
   delete '/logout',  to: 'sessions#destroy'
   
-  get '/classworks',  to: 'classworks#home'
+  get '/classworks',        to: 'classworks#home'
   get  '/classworks/index', to: 'classworks#index'
   get '/classworks/search', to: 'classworks#search'
-  get  '/classworks/:id', to: 'classworks#show'
+  get  '/classworks/:id',   to: 'classworks#show'
   
-  resources :users
+  get '/classworks/:id/comments/new', to: 'comments#new', as:'comments_new'
+  get '/classworks/:id/comments',     to: 'comments#index', as:'comments_index'
+  
+  
   #resources :classworks
 end

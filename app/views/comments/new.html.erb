@@ -1,0 +1,21 @@
+<div class="top-hero-wrapper text-center">
+   <div class="conteiner top-hero-container">
+    <h1 class="text-white">Hello guys!</h1>
+    <h2 class="text-white">コメント・画像投稿</h2>
+    <div class="comment-container">
+        <div class="comment-area">
+            <%= form_with url:comments_new_path do |f| %>
+              <%= f.label :comment, class: 'text-white text-label' %>
+              <%= f.text_area :comment, rows: 100, cols: 30, class: 'text-area' %>
+        </div>
+        <div class="image-area">
+              <%= f.label :image,"画像を投稿する", class: 'text-white text-label' %>
+              <%= f.file_field :picture, class: 'image-design' %>
+        </div>
+        <div class="comment-submit-area">
+        　　    <%= f.submit "投稿する", class: 'btn-white' %>
+            <% end %>
+        </div>
+    </div>
+  </div>
+</div> 
