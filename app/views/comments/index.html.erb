@@ -2,9 +2,14 @@
    <div class="conteiner top-hero-container">
     <h1 class="text-white">Hello guys!</h1>
     <h2 class="text-white">コメント一覧</h2>
-    <div class="container">
-      
-      
+    <div class="comment-index-container row">
+      <% @comments.each do |n| %>
+        <div class="col-md-6">
+          <div class="comment-index">
+            <%= n.content %>
+          </div>
+        </div>
+      <% end %>
   　</div>
   </div>
-</div> 
+</div>

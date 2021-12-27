@@ -6,7 +6,7 @@
          <% @classwork.each do |classwork| %>
             <!--<a href="" class="btn btn--orange">PUSH</a>-->
             
-            <div class="btn btn--orange">
+            <div class="btn btn--Individual-classwork">
                <%= link_to("/classworks/#{classwork.id}", class: "text-white") do %>
                   <%= classwork.class_name %>
                   <%= classwork.professor_name %>

@@ -8,13 +8,17 @@
                  <%= f.label :comment, class: 'text-white text-label' %>
                  <%= f.text_area :comment, rows: 100, cols: 30, class: 'text-area' %>
             </div>
-            <div class="description-area">
-                 <%= f.label :description,"画像コメント", class: 'text-white text-label' %>
-                 <%= f.text_area :description, rows: 100, cols: 30, class: 'text-area' %>
-            </div>
-            <div class="image-area">
-                  <%= f.label :picture,"画像を投稿する", class: 'text-white text-label' %>
-                  <%= f.file_field :picture, class: 'image-design' %>
+            <div class="picture-area">
+                <div class="image-area">
+                      <%= f.file_field :picture, class: 'image-design' %>
+                </div>
+                <div class="image-area">
+                      <%= f.label :picture,"画像を投稿する", class: 'text-white text-label' %>
+                </div>
+                <div class="description-area">
+                     <%= f.label :description,"画像コメント", class: 'text-white text-label' %>
+                     <%= f.text_area :description, rows: 100, cols: 30, class: 'text-area' %>
+                </div>
             </div>
             <div class="comment-submit-area">
             　　    <%= f.submit "投稿する", class: 'btn-white' %>

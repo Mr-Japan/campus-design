@@ -1,0 +1,25 @@
+<div class="top-hero-wrapper text-center">
+   <div class="conteiner top-hero-container">
+     <h1 class="text-white">Hello guys!</h1>
+     <h2 class="text-white">過去問一覧</h2>
+     <div class="picture-container">
+      <% @pictures.each do |n| %>
+        <div class="picture-individual-container">
+          <div class="col-md-6 col-md-offset-3 row">
+            <h3 class="picture-author">
+              <%= n.user.name %>
+            </h3>
+            <h3 class="picture-update-date">
+              <%= n.updated_at %>
+            </h3>
+            <%= image_tag n.image.url %>
+            <p class="picture-text">
+              <%= n.description %>
+            </p>
+          </div>
+        </div>
+      <% end %>
+          
+    </div>
+   </div>
+</div>
