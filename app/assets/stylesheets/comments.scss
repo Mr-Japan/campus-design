@@ -3,7 +3,7 @@
     border-radius: 0.67em;   /* 角丸 */
     padding: 0.5em;          /* 内側の余白量 */
     // background-color: snow;  /* 背景色 */
-    background-color:rgba(255, 255, 255, 0.85);
+    background-color:rgba(255, 255, 255, 0.25);
     width: 300px;             /* 横幅 */
     height: 120px;           /* 高さ */
     font-size: 1em;          /* 文字サイズ */
@@ -36,6 +36,10 @@
   background-color: rgba(187, 187, 187, 0.5);
 }
 
+.image-area {
+  display: inline-block;
+}
+
 .picture-area {
   color: #fff;
   margin-top: 15px;
@@ -53,4 +57,8 @@
   background: rgba(255, 255, 255, 0.85);
   border: solid 3px #228b22;/*線*/
   border-radius: 10px;/*角の丸み*/
+}
+
+.font-color-black {
+  
 }

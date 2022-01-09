@@ -23,8 +23,8 @@ Rails.application.routes.draw do
   
   get '/classworks/:id/comments/new', to: 'comments#new', as:'comments_new'
   get '/classworks/:id/comments',     to: 'comments#index', as:'comments_index'
-  post '/classworks/:id/comments',    to: 'comments#create', as:'comments_create'
-  
+  post '/classworks/:id/comments_comment',    to: 'comments#create_comment', as:'comments_create'
+  post '/classworks/:id/comments_picture',    to: 'comments#create_picture', as:'pictures_create'
   get '/classworks/:id/pictures',     to: 'pictures#index', as:'pictures_index'
   
   
