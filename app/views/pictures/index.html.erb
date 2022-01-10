@@ -2,20 +2,21 @@
    <div class="conteiner top-hero-container">
      <h1 class="text-white">Hello guys!</h1>
      <h2 class="text-white">過去問一覧</h2>
-     <div class="picture-container">
+     <div class="picture-container col-md-6 col-offset-md-3 text-white">
       <% @pictures.each do |n| %>
         <div class="picture-individual-container">
           <div class="col-md-6 col-md-offset-3 row">
+            <h3 class="picture-update-date">
+              <%= n.updated_at.strftime("%Y年%m月%d日") %>
+            </h3>
+            <%= image_tag n.image.url %>
             <h3 class="picture-author">
               <%= n.user.name %>
             </h3>
-            <h3 class="picture-update-date">
-              <%= n.updated_at %>
-            </h3>
-            <%= image_tag n.image.url %>
-            <p class="picture-text">
-              <%= n.description %>
-            </p>
+            <h4 class="picture-description-hedding">画像コメント</h4>
+            <div class="picture-text">
+              <p><%= n.description %></p>
+            </div>
           </div>
         </div>
       <% end %>
