@@ -42,6 +42,7 @@ class ClassworksController < ApplicationController
             abort 404
         end
         #sbinding.pry
+        @favorite = Favorite.find_by(classwork_id: @classwork.id, user_id: current_user.id)
         
         render "classworks/show"
     end

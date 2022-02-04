@@ -3,24 +3,32 @@
     <h1 class="text-white">Hello guys!</h1>
     <h2 class="text-white">コメント・画像投稿</h2>
     <div class="container">
-              <%= form_with url:comments_create_path, local:true do |f| %>
+        <%= form_with url:comments_create_path, local:true do |f| %>
             <div class="row comment-area">
-                 <%= f.label :comment, class: 'text-white text-label' %>
-                 <%= f.text_area :comment, rows: 100, cols: 20, class: 'text-area' %>
-            <div class="comment-submit-area">
-              <%= f.submit "投稿する", class: 'btn-white' %>
+                <div>
+                     <%= f.label :content, class: 'text-white text-label' %>
+                </div>
+                <div>
+                     <%= f.text_area :content, rows: 100, cols: 20, class: 'text-area', name:"comment[content]" %>
+                </div>
+                <div class="comment-submit-area">
+                  <%= f.submit "投稿する", class: 'btn-white' %>
+                </div>
             </div>
-            </div>
-              <% end %>
+        <% end %>
               <%= form_with url:pictures_create_path, local:true do |f| %>
             <div class="row picture-area">
                 <div class="image-area">
-                  <%= f.label :picture,"Picture", class: 'text-white' %>
-                  <%= f.file_field :picture %>
+                  <%= f.label :image,"Image", class: 'text-white' %>
+                 </div>
+                 <div>
+                  <%= f.file_field :image, class: 'picture-file-field', name:"picture[image]" %>
                 </div>
                 <div class="description-area">
                   <%= f.label :description,"Description", class: 'text-label' %>
-                  <%= f.text_area :description, rows: 100, cols: 20, class: 'text-area' %>
+                </div>
+                <div>
+                  <%= f.text_area :description, rows: 100, cols: 20, class: 'text-area', name:"picture[description]" %>
                 </div>
                 <div class="description-submit-area">
             　　    <%= f.submit "投稿する", class: 'btn-white' %>

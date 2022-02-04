@@ -13,19 +13,31 @@
             <%= @classwork.introduction %>
          </div>
       <div class="comment-btn flex-center">
+         <!--<div>-->
+            <!--< link_to 'この講義をお気に入りに登録する', favorite_index_path, class: 'btn btn-block btn-white flex-center' %>-->
+         <!--</div>-->
          <div class="col-md-3">
-             <%= link_to '投稿された情報を見る', comments_index_path, class: 'btn btn-block btn-white flex-center' %>
+            <%= link_to '投稿されたコメント', comments_index_path, class: 'btn btn-block btn-white flex-center' %>
          </div>
          <div class="col-md-3">
-             <%= link_to 'コメントを投稿する', comments_new_path, class: 'btn btn-block btn-white flex-center' %>
+            <%= link_to 'コメントを投稿する', comments_new_path, class: 'btn btn-block btn-white flex-center' %>
          </div>
          <div class="col-md-3">
-             <%= link_to '過去問を見る', pictures_index_path, class: 'btn btn-block btn-white flex-center' %>
+            <%= link_to '過去問', pictures_index_path, class: 'btn btn-block btn-white flex-center' %>
+         </div>
+         <div class="col-md-3">
+            <% if @favorite.blank? %>
+               <%= form_with(url:favorites_path, local: true, method: "POST", class: 'btn  btn-block btn-white flex-center border-none') do |f| %>
+                  <%= f.hidden_field :classwork_id, value: @classwork.id %>
+                  <%= f.submit '後で見るに登録', class: 'btn btn-block btn-white' %>
+               <% end %>
+            <% else %>
+               <%= form_with(url:favorites_path, local: true, method: "DELETE", class: 'btn  btn-block btn-white flex-center border-none') do |f| %>
+                  <%= f.hidden_field :classwork_id, value: @classwork.id %>
+                  <%= f.submit '後で見るに登録を解除', class: 'btn btn-block btn-white' %> 
+               <% end %>
+            <% end %>
          </div>
       </div>
-
-      
-      
-      
    </div>
 </div>

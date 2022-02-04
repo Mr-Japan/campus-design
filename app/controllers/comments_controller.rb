@@ -1,7 +1,6 @@
 class CommentsController < ApplicationController
   def new
     @comment = Comment.new
-    
   end
   
   def index
@@ -9,27 +8,25 @@ class CommentsController < ApplicationController
   end
   
   def create_comment
+    @comment = Comment.new(user_id:current_user.id, classwork_id:params[:id], **comment_params )
     #binding.pry
-    @comment = Comment.new(user_id:current_user.id, classwork_id:params[:id], content:params[:comment])
-  # binding.pry
-    if params[:comment].present?
-      @comment.save!
-      redirect_to comments_index_path, success: "コメントの投稿に成功しました" and return
+    if @comment.save
+      redirect_to comments_index_path, success: "コメントの投稿に成功しました"
     else
       flash.now[:danger] = "コメントの投稿に失敗しました"
-      render :new and return
+      render :new
     end
     
   end
   
   def create_picture
-    @picture = Picture.new(user_id:current_user.id, classwork_id:params[:id], description:params[:description], image:params[:picture])
-    if params[:picture].present?
-      @picture.save!
+    @picture = Picture.new(user_id:current_user.id, classwork_id:params[:id], **picture_params)
+    #binding.pry
+    if @picture.save
       redirect_to pictures_index_path, success: "画像の投稿に成功しました"  
     else
       flash.now[:danger] = "画像の投稿に失敗しました"
-      render :new and return
+      render :new
     end
   end
   
@@ -52,12 +49,12 @@ class CommentsController < ApplicationController
   
   private
   def comment_params
-    params.require(:comment).permit(:comment)
+    params.require(:comment).permit(:content)
   end
   
   private
   def picture_params
-    params.require(:picture).permit(:description, :picture)
+    params.require(:picture).permit(:description, :image)
   end
   
 end

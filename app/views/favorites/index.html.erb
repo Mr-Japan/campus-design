@@ -1,0 +1,18 @@
+<div class="top-hero-wrapper text-center">
+   <div class="conteiner top-hero-container">
+      <h1 class="text-white">Hello guys!</h1>
+      <h2 class="text-white">お気に入り講義一覧</h2>
+      <div class="container">
+         <% @favorite_classworks.each do |classwork| %>
+            <div class="btn btn--Individual-classwork">
+               <%= link_to("/classworks/#{classwork.id}", class: "text-white") do %>
+                  <%= classwork.class_name %>
+                  <%= classwork.professor_name %>
+                  <%= classwork.w_day %>
+                  <%= classwork.period %>
+               <% end %>
+            </div>
+         <% end %>
+      </div>
+   </div>
+</div>

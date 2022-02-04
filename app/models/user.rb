@@ -5,8 +5,9 @@ class User < ApplicationRecord
   validates :password, {presence: true, length: { minimum: 1, maximum: 32 }, format: { with: VALID_PASSWORD_REGEX, message: 'は半角英数を両方含む必要があります'}}
   has_secure_password 
   
-  has_many :topics
   has_many :classworks
   has_many :comments
   has_many :pictures
+  has_many :favorites
+  has_many :favorite_classworks, through: :favorites, source: :classwork
 end
