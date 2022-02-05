@@ -19,5 +19,5 @@ class FavoritesController < ApplicationController
     favorite = current_user.favorites.find_by(classwork_id: params[:classwork_id]).destroy
     redirect_to classworks_search_path, danger: 'お気に入り登録を解除しました'
   end
-  
+  #   @favorites_count = Favorite.where(classwork_id: 000.id).count
 end

@@ -2,6 +2,10 @@
    <div class="conteiner top-hero-container">
       <h1 class="text-white">Hello guys!</h1>
       <h2 class="text-white">個別授業ページ</h2>
+      <div class="favorite-count text-white">
+         <h3>この講義のお気に入り登録者数=><%= @classwork.favorites.count %></h3>
+      </div>
+      <i class="fab fa-contao fa-9x fa-spin fa-border fontawesome-color"></i>
       <div class="individual text-white">
          <%= @classwork.class_name %>
          <%= @classwork.professor_name %>
