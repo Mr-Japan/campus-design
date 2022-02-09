@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
+  devise_for :admin_users
   #resources :topics
   #get 'topics/new', to: "topics#new"
   #post "topics", to: "topics#create"

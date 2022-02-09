@@ -38,11 +38,9 @@ class ClassworksController < ApplicationController
     
     def show
         @classwork = Classwork.find_by(id: params[:id])
-        #@favorite_count = Favorite.where(classwork_id: @classwork).count
         if @classwork.nil?
             abort 404
         end
-        #binding.pry
         @favorite = Favorite.find_by(classwork_id: @classwork.id, user_id: current_user.id)
         render "classworks/show"
     end
