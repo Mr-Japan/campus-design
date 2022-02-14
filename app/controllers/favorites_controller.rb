@@ -23,5 +23,4 @@ class FavoritesController < ApplicationController
       redirect_to classworks_search_path, danger: 'お気に入り登録の解除に失敗しました'
     end
   end
-  #   @favorites_count = Favorite.where(classwork_id: 000.id).count
 end

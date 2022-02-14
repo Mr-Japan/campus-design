@@ -9,7 +9,6 @@ class TopicsController < ApplicationController
   
   def create
     @topic = current_user.topics.new(topic_params)
-    
     if @topic.save
       redirect_to topics_path, success: "画像が投稿されました"
     else
